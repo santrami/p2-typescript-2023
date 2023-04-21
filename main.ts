@@ -16,7 +16,8 @@ for (const dato of datos) {
   <p>Earth Date: ${dato.earth_date}</p>
   <p>Rover Status: ${dato.rover.status}</p>
   <p>Launch Date: ${dato.rover.launch_date}</p>
-  <p>Landing Date: ${dato.rover.landing_date}</p>`;
+  <p>Landing Date: ${dato.rover.landing_date}</p>
+  <a href="../photos.html"> volver </a>`;
 
   writeFile(`./individuales/${dato.id}.html`, html);
 }
