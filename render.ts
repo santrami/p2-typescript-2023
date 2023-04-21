@@ -36,5 +36,15 @@ ${head}
 </html>`;
 };
 
+export const renderIndividuales = (photo: Curiosity)=>{
+  let html = ` <h1>${photo.rover.name} - ${photo.camera.full_name}</h1>
+  <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
+  <p>Earth Date: ${photo.earth_date}</p>
+  <p>Rover Status: ${photo.rover.status}</p>
+  <p>Launch Date: ${photo.rover.launch_date}</p>
+  <p>Landing Date: ${photo.rover.landing_date}</p>
+  <a href="../photos.html"> volver </a>`;
+}
+
 //const photos= await loadPhotos();
 /* renderPhotos(photos); */
