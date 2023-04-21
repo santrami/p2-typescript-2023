@@ -1,10 +1,14 @@
+*{
+  margin:0;
+  padding: 0;
+}
+
 .container {
   width: 90%;
   margin:auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  /* grid-auto-rows: minmax(100px, auto); */
 }
 .container img { 
   max-width: 100%;
@@ -15,6 +19,26 @@
   color: #333;
 }
 
-.item {
-  cursor: pointer;
+.item{
+  display:flex;
+  flex-direction: column;
+}
+
+.item .btn{
+  text-decoration: none;
+  font-size: 1.3em;
+  text-align: center;
+
+}
+.titulo{
+  display: flex;
+  font-size: 1.5em;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color:white;
+  padding: 50px;
+  margin-bottom: 20px;
+
 }

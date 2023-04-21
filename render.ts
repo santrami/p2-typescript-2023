@@ -9,7 +9,6 @@ const head = `<head>
   <link rel="stylesheet" href="style.css">
 </head>`;
 
-
 const renderPhotos = (photos: Array<Curiosity>) => {
   let html = "";
   for (const photo of photos) {
@@ -24,16 +23,15 @@ const renderPhotos = (photos: Array<Curiosity>) => {
   return html;
 };
 
-
-
 export const render = (photos: Array<Curiosity>) => {
   return `
 <!DOCTYPE html>
 ${head}
   <body>
-    <div class="container">
+    <h1 class="titulo">Imágenes tomadas desde el rover curiosity en el día 2 marciano de su llegada</h1>
+    <main class="container">
       ${renderPhotos(photos)}
-    </div>
+    </main>
   </body>
 </html>`;
 };
