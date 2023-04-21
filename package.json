@@ -1,8 +1,14 @@
 {
-  "name": "json-to-html",
+  "name": "nasa_api",
   "module": "main.ts",
   "type": "module",
   "devDependencies": {
     "bun-types": "^0.5.0"
+  },
+  "scripts": {
+    "dev": "bun main.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }
