@@ -36,8 +36,9 @@ ${head}
 </html>`;
 };
 
-export const renderIndividuales = (photo: Curiosity)=>{
-  let html = ` <h1>${photo.rover.name} - ${photo.camera.full_name}</h1>
+const renderIndividual = (photo: Curiosity)=>{
+  let html = `   
+  <h1>${photo.rover.name} - ${photo.camera.full_name}</h1>
   <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
   <p>Earth Date: ${photo.earth_date}</p>
   <p>Rover Status: ${photo.rover.status}</p>
@@ -46,6 +47,21 @@ export const renderIndividuales = (photo: Curiosity)=>{
   <a href="../photos.html"> volver </a>`;
   return html;
 }
+
+export const generarIndividual = (photo:Curiosity) =>{
+  return `
+    <!DOCTYPE html>
+      ${head}
+      <body>
+        <h1 class="titulo">Imágenes tomadas desde el rover curiosity en el día 2 marciano de su llegada</h1>
+        <main class="container">
+          ${renderIndividual(photo)}
+        </main>
+      </body>
+    </html>`;
+}
+
+
 
 //const photos= await loadPhotos();
 /* renderPhotos(photos); */
