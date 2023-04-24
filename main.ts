@@ -9,7 +9,7 @@ await writeFile("photos.html", html);
 
 /* haciendo páginas individuales */
 const dir = "./individuales";
-!existsSync(dir) ? mkdirSync(dir) : console.log("ya existe el directorio"); 
+(!existsSync(dir) ? mkdirSync(dir) : console.log("ya existe el directorio")); 
 
 for (const dato of datos) {
   const individual= generarIndividual(dato);  

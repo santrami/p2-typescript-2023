@@ -37,13 +37,19 @@ ${head('style.css')}
 };
 
 const renderIndividual = (photo: Curiosity)=>{
-  let html = `<h1>${photo.rover.name} - ${photo.camera.full_name}</h1>
-    <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
-    <p>Earth Date: ${photo.earth_date}</p>
-    <p>Rover Status: ${photo.rover.status}</p>
-    <p>Launch Date: ${photo.rover.launch_date}</p>
-    <p>Landing Date: ${photo.rover.landing_date}</p>
-    <a href="../photos.html"> volver </a>`;
+  let html = `<div class="item-individual">
+    <div class="column">
+      <h1>${photo.rover.name} - ${photo.camera.full_name} - foto ${photo.id} del día solar 2 </h1>
+      <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
+    </div>
+    <div class="column">
+      <p>Fecha de la tierra: ${photo.earth_date}</p>
+      <p>Rover Status: ${photo.rover.status}</p>
+      <p>Launch Date: ${photo.rover.launch_date}</p>
+      <p>Landing Date: ${photo.rover.landing_date}</p>
+      <a href="../photos.html"> volver </a>
+    </div>
+  </div>`;
   return html;
 }
 
