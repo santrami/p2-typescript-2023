@@ -52,7 +52,7 @@ const renderIndividual = (photo: Curiosity) => {
     <div class="column">
       <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
     </div>
-    <div class="column">
+    <div class="column text-individual">
       <p>Fecha de la tierra: ${photo.earth_date}</p>
       <p>Rover Status: ${photo.rover.status}</p>
       <p>Launch Date: ${photo.rover.launch_date}</p>
