@@ -42,3 +42,13 @@
   margin-bottom: 20px;
 
 }
+
+/*individuals style*/
+
+.container-individual{
+  width: 90%;
+}
+
+.container-individual img{
+  width: 100%;
+}

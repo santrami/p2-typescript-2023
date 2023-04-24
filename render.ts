@@ -1,12 +1,12 @@
 import { Curiosity } from "./Curiosity.js";
 /* import { loadPhotos } from "./photos.js"; */
 
-const head = `<head>
+const head = (style:string) => `<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="${style}">
 </head>`;
 
 const renderPhotos = (photos: Array<Curiosity>) => {
@@ -26,42 +26,34 @@ const renderPhotos = (photos: Array<Curiosity>) => {
 export const render = (photos: Array<Curiosity>) => {
   return `
 <!DOCTYPE html>
-${head}
-  <body>
-    <h1 class="titulo">Imágenes tomadas desde el rover curiosity en el día 2 marciano de su llegada</h1>
-    <main class="container">
-      ${renderPhotos(photos)}
-    </main>
-  </body>
+${head('style.css')}
+<body>
+  <h1 class="titulo">Imágenes tomadas desde el rover curiosity en el día 2 marciano de su llegada</h1>
+  <main class="container">
+    ${renderPhotos(photos)}
+  </main>
+</body>
 </html>`;
 };
 
 const renderIndividual = (photo: Curiosity)=>{
-  let html = `   
-  <h1>${photo.rover.name} - ${photo.camera.full_name}</h1>
-  <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
-  <p>Earth Date: ${photo.earth_date}</p>
-  <p>Rover Status: ${photo.rover.status}</p>
-  <p>Launch Date: ${photo.rover.launch_date}</p>
-  <p>Landing Date: ${photo.rover.landing_date}</p>
-  <a href="../photos.html"> volver </a>`;
+  let html = `<h1>${photo.rover.name} - ${photo.camera.full_name}</h1>
+    <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
+    <p>Earth Date: ${photo.earth_date}</p>
+    <p>Rover Status: ${photo.rover.status}</p>
+    <p>Launch Date: ${photo.rover.launch_date}</p>
+    <p>Landing Date: ${photo.rover.landing_date}</p>
+    <a href="../photos.html"> volver </a>`;
   return html;
 }
 
 export const generarIndividual = (photo:Curiosity) =>{
-  return `
-    <!DOCTYPE html>
-      ${head}
-      <body>
-        <h1 class="titulo">Imágenes tomadas desde el rover curiosity en el día 2 marciano de su llegada</h1>
-        <main class="container">
-          ${renderIndividual(photo)}
-        </main>
-      </body>
-    </html>`;
+  return `<!DOCTYPE html>
+${head('../style.css')}
+<body>
+  <main class="container-individual">
+    ${renderIndividual(photo)}
+  </main>
+</body>
+</html>`;
 }
-
-
-
-//const photos= await loadPhotos();
-/* renderPhotos(photos); */
