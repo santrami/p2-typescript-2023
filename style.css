@@ -54,24 +54,34 @@ body{
   width: 90%;
   margin:auto;
   display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.container-individual
-
-.column{
-  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.column{
-  display: flex;
-}
 
-.item-individual h1{
+.container-individual h1{
   text-align: center;
   padding: 30px;
   background-color: #333;
   color:white;
+  width: 100%;
+}
+
+.row{
+  display:flex;
+  flex-direction: row;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.column{
+  width: 100%;
+  display: inline;
+  text-align: center;
+  font-size: 2rem;
+}
+.container-individual img{
+  width: 100%;
 }

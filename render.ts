@@ -37,9 +37,10 @@ ${head('style.css')}
 };
 
 const renderIndividual = (photo: Curiosity)=>{
-  let html = `<div class="item-individual">
+  let html = `
+  <h1>${photo.rover.name} - ${photo.camera.full_name} - foto ${photo.id} del día solar 2 </h1>
+  <div class="row">
     <div class="column">
-      <h1>${photo.rover.name} - ${photo.camera.full_name} - foto ${photo.id} del día solar 2 </h1>
       <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
     </div>
     <div class="column">
@@ -49,7 +50,8 @@ const renderIndividual = (photo: Curiosity)=>{
       <p>Landing Date: ${photo.rover.landing_date}</p>
       <a href="../photos.html"> volver </a>
     </div>
-  </div>`;
+  </div>
+  `;
   return html;
 }
 
