@@ -51,7 +51,7 @@ body{
 /*individuals style*/
 
 .container-individual{
-  width: 90%;
+  width: 100%;
   margin:auto;
   display:flex;
   flex-direction: column;
@@ -60,9 +60,10 @@ body{
 }
 
 
-.container-individual h1{
+.container-individual header{
+  font-size: 1.3rem;
   text-align: center;
-  padding: 30px;
+  padding: 30px 0;
   background-color: #333;
   color:white;
   width: 100%;
@@ -80,8 +81,24 @@ body{
   width: 100%;
   display: inline;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 .container-individual img{
   width: 100%;
+}
+
+footer img{
+  width: 100px;
+}
+
+footer{
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 30px 0;
+  background-color: #333;
+  color:white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

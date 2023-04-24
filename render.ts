@@ -7,7 +7,15 @@ const head = (style:string) => `<head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="${style}">
+  <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg">
 </head>`;
+
+const footer = `
+<footer>
+<img src="https://api.nasa.gov/assets/footer/img/favicon-192.png"
+<h3 class="footer-title">Tomado de la api de la Nasa</h3>
+</footer>
+`
 
 const renderPhotos = (photos: Array<Curiosity>) => {
   let html = "";
@@ -32,13 +40,14 @@ ${head('style.css')}
   <main class="container">
     ${renderPhotos(photos)}
   </main>
+  ${footer}
 </body>
 </html>`;
 };
 
 const renderIndividual = (photo: Curiosity)=>{
   let html = `
-  <h1>${photo.rover.name} - ${photo.camera.full_name} - foto ${photo.id} del día solar 2 </h1>
+  <header>${photo.rover.name} - ${photo.camera.full_name} - foto ${photo.id} del día solar 2 </header>
   <div class="row">
     <div class="column">
       <img src="${photo.image}" alt="${photo.rover.name} - ${photo.camera.full_name}">
@@ -62,6 +71,7 @@ ${head('../style.css')}
   <main class="container-individual">
     ${renderIndividual(photo)}
   </main>
+${footer}
 </body>
 </html>`;
 }
