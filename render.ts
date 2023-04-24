@@ -44,6 +44,7 @@ export const renderIndividuales = (photo: Curiosity)=>{
   <p>Launch Date: ${photo.rover.launch_date}</p>
   <p>Landing Date: ${photo.rover.landing_date}</p>
   <a href="../photos.html"> volver </a>`;
+  return html;
 }
 
 //const photos= await loadPhotos();
