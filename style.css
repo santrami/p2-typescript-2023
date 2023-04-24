@@ -14,6 +14,7 @@ body{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  
 }
 .container img { 
   max-width: 100%;
@@ -27,6 +28,23 @@ body{
 .item{
   display:flex;
   flex-direction: column;
+  background-color: #b0b0b073;
+  padding:20px;
+  transition: 0.8s all;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+.item:hover{
+  box-shadow: #333 10px 10px 15px;
+}
+
+.item a{
+  padding-top: 15px;
+}
+
+.item a:visited{
+  color:black;
 }
 
 .item .btn{

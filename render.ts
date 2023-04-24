@@ -1,7 +1,7 @@
 import { Curiosity } from "./Curiosity.js";
 /* import { loadPhotos } from "./photos.js"; */
 
-const head = (style:string) => `<head>
+const head = (style: string) => `<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,20 +12,20 @@ const head = (style:string) => `<head>
 
 const footer = `
 <footer>
-<img src="https://api.nasa.gov/assets/footer/img/favicon-192.png"
+<img src="https://api.nasa.gov/assets/footer/img/favicon-192.png"/>
 <h3 class="footer-title">Tomado de la api de la Nasa</h3>
 </footer>
-`
+`;
 
 const renderPhotos = (photos: Array<Curiosity>) => {
   let html = "";
   for (const photo of photos) {
     html += `      
-        <div class="item">
-          <h3 class="title">tomada con la cámara ${photo.camera.name}</h3>     
-          <img src=" ${photo.image} "/>
-          <a href="./individuales/${photo.id}.html" class="btn">Ver más detalles</a>    
-        </div>    
+    <div class="item">
+      <h3 class="title">tomada con la cámara ${photo.camera.name}</h3>     
+      <img src=" ${photo.image} "/>
+      <a href="./individuales/${photo.id}.html" class="btn">Ver más detalles</a>    
+    </div>    
     `;
   }
   return html;
@@ -34,7 +34,7 @@ const renderPhotos = (photos: Array<Curiosity>) => {
 export const render = (photos: Array<Curiosity>) => {
   return `
 <!DOCTYPE html>
-${head('style.css')}
+${head("style.css")}
 <body>
   <h1 class="titulo">Imágenes tomadas desde el rover curiosity en el día 2 marciano de su llegada</h1>
   <main class="container">
@@ -45,7 +45,7 @@ ${head('style.css')}
 </html>`;
 };
 
-const renderIndividual = (photo: Curiosity)=>{
+const renderIndividual = (photo: Curiosity) => {
   let html = `
   <header>${photo.rover.name} - ${photo.camera.full_name} - foto ${photo.id} del día solar 2 </header>
   <div class="row">
@@ -62,16 +62,16 @@ const renderIndividual = (photo: Curiosity)=>{
   </div>
   `;
   return html;
-}
+};
 
-export const generarIndividual = (photo:Curiosity) =>{
+export const generarIndividual = (photo: Curiosity) => {
   return `<!DOCTYPE html>
-${head('../style.css')}
+${head("../style.css")}
 <body>
   <main class="container-individual">
     ${renderIndividual(photo)}
   </main>
-${footer}
+  ${footer}
 </body>
 </html>`;
-}
+};
